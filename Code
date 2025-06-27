@@ -1,0 +1,38 @@
+🛑1.Apply aggregate functions on numeric columns
+//Code
+-- Count total number of books
+SELECT COUNT(*) AS TotalBooks FROM Books;
+
+-- Find the average published year of all books
+SELECT AVG(PublishedYear) AS AverageYear FROM Books;
+
+-- Count total number of members
+SELECT COUNT(*) AS TotalMembers FROM Members;
+
+-- Get minimum and maximum published year
+SELECT MIN(PublishedYear) AS OldestBook, MAX(PublishedYear) AS NewestBook FROM Books;
+
+ 🛑2.Use GROUP BY to categorize
+//Code
+-- Count number of books in each category
+SELECT CategoryID, COUNT(*) AS BooksInCategory
+FROM Books
+GROUP BY CategoryID;
+
+-- Count number of loans per member
+SELECT MemberID, COUNT(*) AS TotalLoans
+FROM Loans
+GROUP BY MemberID;
+ 🛑3.Filter groups using HAVING
+//Code
+-- Show only categories with more than 1 book
+SELECT CategoryID, COUNT(*) AS BooksInCategory
+FROM Books
+GROUP BY CategoryID
+HAVING COUNT(*) > 1;
+
+-- Show members who have borrowed more than 1 book
+SELECT MemberID, COUNT(*) AS TotalLoans
+FROM Loans
+GROUP BY MemberID
+HAVING COUNT(*) > 1;
