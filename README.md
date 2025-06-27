@@ -1,1 +1,6 @@
 # Aggregate-functions-GROUP-BY-to-categorize-Filter-groups
+After building and populating the Library Management System database, I performed various data analysis tasks using aggregate functions and grouping operations in SQL. To begin, I used functions like COUNT(), AVG(), MIN(), and MAX() to calculate useful statistics. For example, I counted the total number of books and members, found the average year of book publication, and identified the oldest and newest books in the collection.
+
+To categorize data, I used the GROUP BY clause. This allowed me to group books by category and count how many books exist under each category. Similarly, I grouped loan records by member ID to find out how many books each member has borrowed. These grouped results provided insights into user activity and category usage.
+
+Additionally, I used the HAVING clause to filter grouped data based on aggregate results. For example, I displayed only those categories that have more than one book, and I filtered members who have borrowed more than one book. The combination of GROUP BY and HAVING allowed me to perform meaningful analysis on grouped datasets and extract relevant business insights from the structured data.
